@@ -32,6 +32,6 @@ def projetos(id_usuario):
 def projeto_detalhes(id_projeto):
     return render_template('projeto_individual.html', id_projeto=id_projeto)
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     print("🚀 Servidor Flask rodando em modo DEBUG...")
-    app.run(debug=True)
+    app.run(debug=True)'''
