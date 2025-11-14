@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================
   async function carregarHabilidades() {
     try {
-      const resp = await fetch(`http://127.0.0.1:8000/habilidades/${idUsuario}`);
+      const resp = await fetch(`https://microidealizador.azurewebsites.net/habilidades/${idUsuario}`);
       const dados = await resp.json();
 
       lista.innerHTML = "";
@@ -105,3 +105,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================
   carregarHabilidades();
 });
+
