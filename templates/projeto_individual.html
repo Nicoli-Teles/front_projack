@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/editar_e_excluir.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/edicao.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/exclusao.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/ia.css') }}">
 </head>
 
 <body>
@@ -159,6 +160,23 @@
     </div>
   </div>
 
+<!-- ===============================
+     🔹 MODAL DE SOLICITAÇÃO IA
+=============================== -->
+<div id="modalIA" class="modal-ia">
+  <div class="modal-ia-content">
+    <button class="fechar-ia" id="btnFecharIA">✖</button>
+    <h2>Assistente de Seleção de Colaboradores 🤖</h2>
+    <p>Deseja que a IA analise as solicitações e escolha os 5 melhores colaboradores para este projeto?</p>
+    <div class="modal-ia-buttons">
+      <button id="btnConfirmarIA">Sim, analisar</button>
+      <button id="btnCancelarIA">Cancelar</button>
+    </div>
+    <div id="iaResultado" class="ia-resultado"></div>
+  </div>
+</div>
+
+
   <!-- ===============================
        🔹 SCRIPT GLOBAL — define o ID do projeto
    =============================== -->
@@ -175,6 +193,8 @@
 <script src="{{ url_for('static', filename='js/js_projeto_individual/solicitacoes.js') }}"></script>
 <script src="{{ url_for('static', filename='js/js_projeto_individual/edicao.js') }}"></script>
 <script src="{{ url_for('static', filename='js/js_projeto_individual/exclusao.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/ia.js') }}"></script>
+
 <script>
   // Função para voltar à página de projetos
   async function voltarPagina() {
