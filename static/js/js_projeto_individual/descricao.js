@@ -1,7 +1,7 @@
 // ===============================
 // 🔹 Base da API padronizada
 // ===============================
-const API_BASE = "http://127.0.0.1:8000"; // <-- use a mesma base do restante
+const API_BASE = "https://fabricioapis.azurewebsites.net"; // <-- use a mesma base do restante
 
 // ===============================
 // 🔹 Seleção segura dos elementos
