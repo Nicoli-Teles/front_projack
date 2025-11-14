@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const id_idealizador = window.idIdealizadorGlobal;
       console.log("🧠 ID do idealizador ativo:", id_idealizador);
 
-      const response = await fetch(`http://127.0.0.1:8000/projetos/${id_idealizador}`);
+      const response = await fetch(`https://fabricioapis.azurewebsites.net/projetos/${id_idealizador}`);
 
       if (!response.ok) {
         throw new Error(`Erro ao buscar projetos (HTTP ${response.status})`);
