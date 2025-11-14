@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .filter(Boolean);
 
     try {
-      await fetch(`http://127.0.0.1:8000/habilidades/${idUsuario}`, {
+      await fetch(https://microidealizador.azurewebsites.net/habilidades/${idUsuario}, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(habilidades),
@@ -105,4 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================
   carregarHabilidades();
 });
+
 
