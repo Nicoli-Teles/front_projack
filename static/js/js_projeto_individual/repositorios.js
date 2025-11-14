@@ -3,7 +3,7 @@
    ============================================================ */
    (() => {
     // 🔹 Base da API padronizada
-    const API_BASE = "http://127.0.0.1:8000";
+    const API_BASE = "https://fabricioapis.azurewebsites.net";
   
     // 🔹 Usa o ID global definido em global.js
     const idProjeto = window.repoIdProjeto || 1;
