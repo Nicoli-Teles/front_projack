@@ -142,7 +142,7 @@
     }
 
     try {
-      const resp = await fetch(`http://127.0.0.1:8000/perfil/${id}`);
+      const resp = await fetch(`https://microidealizador.azurewebsites.net/perfil/${id}`);
       const perfil = await resp.json();
 
       if (!resp.ok) throw new Error("Erro ao carregar perfil");
