@@ -1,0 +1,54 @@
+/* lado direito */
+
+
+/* idealizador */
+.idealizador {
+    width: 128px;
+    font-family: 'Quantico', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+    text-align: center;  /* centraliza o texto dentro da caixa */
+    margin: 0;           /* remove margem padrão do <p> */
+    margin-bottom: 40px; /* <<< Adiciona espaço abaixo do texto “Idealizador” */
+    margin-top: 10px;
+  }
+
+ /* conteiner para o menu */
+
+.info_menu1, .info_menu2 {
+  width: 300px;
+  height: 100px ;
+  text-align: left;
+
+}
+
+ .menu2, .menu1 {
+  display: flex;               /* Permite que o ícone e o texto fiquem lado a lado */
+  font-family: 'Quantico', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+  gap: 10px;                   /* Espaço entre ícone e texto */
+  align-items: center;
+}
+
+.menu1 span {
+
+  position: relative;
+  top: 7px; /* sobe só o texto */
+  display: inline-block; /* necessário para top funcionar corretamente */
+
+}
+.menu1:hover,
+.menu2:hover {
+  color: #9fd3c7;              /* Muda a cor ao passar o mouse */
+}
+
+
+
+
+

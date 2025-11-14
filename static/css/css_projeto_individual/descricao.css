@@ -1,0 +1,119 @@
+/* ===============================
+   CONFIGURAÇÃO DO BLOCO DE DESCRIÇÃO
+   =============================== */
+.descricao {
+  position: relative;              /* necessário para posicionar elementos internos como imagens */
+  width: 50%;                      /* largura fixa do bloco */
+  background-color: #ffffff;       /* fundo branco */
+  margin: 1rem 0;                  /* espaçamento superior e inferior */
+  border-radius: 10px;             /* cantos arredondados */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+  box-sizing: border-box;          /* inclui padding e borda no tamanho total */
+  display: flex;                   /* flex para organizar elementos em coluna */
+  flex-direction: column;          /* empilha os elementos verticalmente */
+  border: 2px solid #1D4C3A;      /* linha de contorno verde escura */
+
+}
+
+/* ===============================
+   TÍTULO DA DESCRIÇÃO
+   =============================== */
+.titulo_descricao {
+  font-family: 'Quantico', sans-serif;  /* fonte do título */
+  font-size: 3rem;                       /* tamanho grande do título */
+  color: #222222;                        /* cor do texto */
+  background-color: #B7D2BD;             /* fundo do título */
+  margin: 0;                              /* remove margem padrão */
+  padding: 1rem 1.5rem;                  /* espaço interno do título */
+  border-bottom: 2px solid #1D4C3A;      /* linha embaixo do título */
+
+  /* Quinas arredondadas somente no topo */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  /* Sombra do texto para destaque */
+  text-shadow: 0px 6px 10px rgba(0,0,0,0.6); 
+}
+
+/* ===============================
+   TEXTO DA DESCRIÇÃO
+   =============================== */
+.texto {
+  font-size: 1.8rem;                /* tamanho do texto */
+  color: #000000;                   /* cor do texto */
+  line-height: 1.5;                 /* altura da linha para melhor leitura */
+  height: 14rem;                     /* altura fixa do bloco */
+  overflow-x: hidden;
+  overflow-y: auto;                  /* barra de rolagem vertical se o conteúdo ultrapassar */
+  text-overflow: ellipsis;           /* corta excesso se necessário */
+  padding: 0rem 2rem;                /* espaço interno horizontal */
+  text-align: start;
+  box-sizing: border-box;            /* padding não aumenta a altura */
+}
+
+/* ===============================
+   NÍVEL E CATEGORIA
+   =============================== */
+.nivel, .categoria, .status{
+  text-align: justify;               /* texto justificado */
+  padding: 0rem 3rem;                /* espaço interno horizontal */
+  font-size: 1.8rem;                   /* tamanho do texto */
+  color: #333333;                    /* cor do texto */
+  margin: 0;                         /* remove margem padrão */
+  letter-spacing: 0.1rem;            /* espaçamento entre letras */
+}
+
+/* Espaço extra entre nível e categoria */
+.nivel, .categoria {
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   ESTILO OPCIONAL PARA LABEL E VALOR
+   =============================== */
+/* Use <span> dentro de .nivel ou .categoria para cores diferentes */
+.label {
+  color: #1D4C3A;   /* cor do nome, ex: "Nível:" */
+  font-weight: bold;
+}
+
+.valor {
+  color: #000000;   /* cor do valor, ex: "Intermediário" */
+  font-weight: normal;
+}
+
+/* ===============================
+   RESPONSIVIDADE (TELAS PEQUENAS)
+   =============================== */
+@media (max-width: 768px) {
+  .descricao {
+    width: 90%;             /* ocupa mais largura em telas pequenas */
+  }
+
+  .texto {
+    padding: 0rem 1rem;     /* reduz padding horizontal */
+    height: 12rem;          /* ajusta altura para telas menores */
+  }
+
+  .nivel, .categoria {
+    padding: 0rem 1rem;     /* ajusta padding horizontal */
+    font-size: 1.5rem;      /* reduz tamanho do texto */
+  }
+
+  .titulo_descricao {
+    font-size: 2.2rem;      /* reduz tamanho do título */
+    padding: 0.8rem 1rem;   /* ajusta padding */
+  }
+}
+
+/* ===============================
+   IMAGEM NO CANTO SUPERIOR ESQUERDO
+   =============================== */
+.imagem_estrelas {
+  position: absolute;      /* posiciona relativamente ao bloco .descricao */
+  top: -3.5rem;               /* distância do topo do bloco */
+  left: -3rem;              /* distância da esquerda do bloco */
+  width: 11rem;             /* largura da imagem */
+  height: auto;            /* mantém proporção */
+  z-index: 10;             /* garante que fique acima do conteúdo */
+}

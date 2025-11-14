@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projack Impulse - Projeto Individual</title>
+
+  <!-- Fontes -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quantico&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap">
+
+  <!-- CSS (rotas dinâmicas via Flask) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/geral.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/descricao.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/repositorios.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/tecnologias.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/colaboradores.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/solicitacoes.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/editar_e_excluir.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/edicao.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projeto_individual/exclusao.css') }}">
+</head>
+
+<body>
+
+<!-- Cabeçalho -->
+<header class="cabecalho">
+  <button class="btn-voltar" onclick="voltarPagina()">
+    <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/voltar.png') }}" alt="Botão voltar" />
+  </button>
+</header>
+
+  <div class="tela">
+
+    <!-- BLOCO 1: Descrição e subbloco direito -->
+    <div class="bloco bloco1">
+
+      <!-- Descrição do projeto -->
+      <div class="descricao">
+        <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/estrelas.png') }}" alt="Estrelas" class="imagem_estrelas">
+        <h2 class="titulo_descricao">Descrição</h2>
+        <p class="texto" id="descricaoProjeto"></p>
+        <p class="nivel"><span class="label">Nível: </span> <span class="valor" id="nivelProjeto"></span></p>
+        <p class="categoria"><span class="label">Categoria: </span> <span class="valor" id="categoriaProjeto"></span></p>
+        <p class="status"><span class="label">Status: </span> <span class="valor" id="statusProjeto"></span></p> <!-- Status adicionado -->
+      </div>
+
+      <!-- Subbloco direito -->
+      <div class="subbloco_direito">
+
+        <!-- Tecnologias -->
+        <div class="tecnologia">
+          <div class="tecnologia-header">
+            <h3>Tecnologias:</h3>
+            <div class="botoes">
+              <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/mais.png') }}" alt="Adicionar" class="btn-img" id="btnAdd">
+              <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/menos.png') }}" alt="Excluir" class="btn-img" id="btnDelete">
+            </div>
+          </div>
+          <div class="tecnologia-lista" id="listaTecnologias"></div>
+        </div>
+
+        <!-- Repositórios -->
+        <div class="repositorio">
+          <div class="repositorio-header">
+            <h3>Repositórios:</h3>
+            <div class="botoes">
+              <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/mais.png') }}" alt="Adicionar" class="btn-img" id="btnAddRepo">
+              <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/menos.png') }}" alt="Excluir" class="btn-img" id="btnDeleteRepo">
+            </div>
+          </div>
+          <div class="repositorio-lista" id="listaRepositorios"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BLOCO 2: Colaboradores e Solicitações -->
+    <div class="bloco bloco2">
+      <div class="colaboradores">
+        <h3 class="titulo_colaboradores">Colaboradores</h3>
+        <div class="lista_colaboradores" id="listaColaboradores"></div>
+      </div>
+
+      <div class="solicitacoes">
+        <div class="solicitacoes-header">
+          <img 
+            src="{{ url_for('static', filename='imagens/imagens_projeto_individual/solicitacoes.png') }}" 
+            alt="Solicitações" 
+            class="titulo_solicitacoes_img"
+          >
+
+          <button 
+            id="botaoSelecionarIA" 
+            class="botao-ia" 
+            title="Use a IA para selecionar automaticamente os 5 melhores colaboradores para o projeto"
+          >
+            🤖
+          </button>
+        </div>
+
+        <div class="lista_solicitacoes" id="listaSolicitacoes"></div>
+      </div>
+
+
+    </div>
+
+    <!-- BLOCO 3: Editar / Excluir -->
+    <div class="bloco bloco3">
+      <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/editar.png') }}" alt="Editar" class="btn-editar">
+      <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/excluir.png') }}" alt="Excluir" class="btn-excluir">
+    </div>
+
+  </div>
+
+  <!-- Modal de Edição -->
+  <div id="modalEdicao">
+    <div class="modal-conteudo">
+      <h2>Editar Projeto</h2>
+
+      <div class="modal-colunas">
+        <!-- Coluna esquerda -->
+        <div class="modal-coluna">
+          <label for="editDescricao">Descrição:</label>
+          <textarea id="editDescricao"></textarea>
+
+          <label for="editNivel">Nível:</label>
+          <select id="editNivel" required>
+            <option value="Básico">Básico</option>
+            <option value="Intermediário">Intermediário</option>
+            <option value="Difícil">Difícil</option>
+          </select>
+
+          <label for="editCategoria">Categoria:</label>
+          <input type="text" id="editCategoria">
+
+          <!-- Adicionando campo de Status -->
+          <label for="editStatus">Status:</label>
+          <select id="editStatus" required>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Concluído">Concluído</option>
+          </select>
+        </div>
+
+        <!-- Coluna direita -->
+        <div class="modal-coluna">
+          <label for="editTecnologias">Tecnologias:</label>
+          <div id="editTecnologias"></div>
+
+          <label for="editRepositorios">Repositórios:</label>
+          <div id="editRepositorios"></div>
+        </div>
+      </div>
+
+      <div class="modal-botoes">
+        <button id="btnCancelarModal">Cancelar</button>
+        <button id="btnSalvarModal">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================
+       🔹 SCRIPT GLOBAL — define o ID do projeto
+   =============================== -->
+   <script>
+    window.repoIdProjeto = Number("{{ id_projeto }}");
+    console.log("📌 ID do projeto atual:", window.repoIdProjeto); // Debug
+  </script>
+
+<!-- JS (rotas dinâmicas via Flask) -->
+<script src="{{ url_for('static', filename='js/js_projeto_individual/descricao.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/repositorios.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/tecnologias.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/colaboradores.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/solicitacoes.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/edicao.js') }}"></script>
+<script src="{{ url_for('static', filename='js/js_projeto_individual/exclusao.js') }}" defer></script>
+<script>
+  // Função para voltar à página de projetos
+  async function voltarPagina() {
+    try {
+      // Fazendo a requisição para a API para buscar os detalhes do projeto
+      const resposta = await fetch(`${API_BASE}/projeto/${projetoId}`);
+      
+      // Verifica se a resposta foi bem-sucedida
+      if (!resposta.ok) {
+        throw new Error('Erro ao buscar o projeto.');
+      }
+
+      // Obtém os dados do projeto em formato JSON
+      const dadosProjeto = await resposta.json();
+
+      // Exibe a resposta completa da API para depuração
+      console.log("Resposta da API:", dadosProjeto);
+
+      // Pega o id_idealizador diretamente da resposta
+      const id_usuario = dadosProjeto.projeto.id_idealizador;
+
+      // Verifica se o id_usuario está presente
+      if (!id_usuario) {
+        throw new Error('ID do usuário não encontrado no projeto.');
+      }
+
+      // Exibe o ID do usuário no console
+      console.log("ID do usuário:", id_usuario);
+
+      // Redireciona para a página de projetos do usuário
+      window.location.href = `/projetos/${id_usuario}`;
+    } catch (erro) {
+      // Se ocorrer algum erro, exibe a mensagem de erro no console
+      console.error('Erro:', erro);
+    }
+  }
+</script>
+
+
+
+</body>
+</html>

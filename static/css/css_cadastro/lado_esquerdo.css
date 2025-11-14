@@ -1,0 +1,109 @@
+/* =======================
+   PAINEL ESQUERDO
+   ======================= */
+   .painel-esquerdo {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    color: #fff;
+    position: relative;
+  }
+  
+  .painel-esquerdo .logo {
+    width: clamp(12rem, 25vw, 40rem);
+    height: auto;
+    object-fit: contain;
+    margin-top: 0; /* remove valores fixos */
+    margin-left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .painel-esquerdo-texto {
+    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    line-height: 1.4;
+    margin-top: 1rem; /* margem mais natural */
+  }
+  
+  .painel-esquerdo-texto p + p {
+    margin-top: 1rem;
+  }
+  
+  .botao-voltar {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .botao-voltar:hover {
+    background-color: #fff;
+    color: #004d33;
+  }
+  
+  .painel-esquerdo .foguete {
+    position: absolute;
+    bottom: -16%;
+    left: -20%;
+    width: clamp(8rem, 15vw, 20rem);
+    height: auto;
+    transform: rotate(-25deg);
+    z-index: 9999;       /* sempre sobre tudo */
+    pointer-events: none; /* não bloqueia cliques */
+    transition: all 0.3s ease;
+  }
+  
+  /* =======================
+     RESPONSIVIDADE
+     ======================= */
+  @media (max-width: 1024px) {
+    .painel-esquerdo {
+      width: 100%;
+      height: auto;
+      padding: 1.5rem;
+    }
+  
+    .botao-voltar {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+    }
+  
+    .painel-esquerdo .logo {
+      width: clamp(10rem, 30vw, 25rem);
+    }
+  
+    .painel-esquerdo .foguete {
+      display: none;
+
+    }
+  }
+
+
+
+  @media (max-width: 600px) {
+    .painel-esquerdo .logo {
+      width: 12rem;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .painel-esquerdo-texto {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  
+    .painel-esquerdo .foguete {
+      width: 8rem;
+      bottom: -2%;
+      left: -2%;
+    }
+  }
+  

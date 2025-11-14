@@ -1,0 +1,14 @@
+/* ===== BOTÕES ===== */
+.btn-editar,
+.btn-excluir {
+  width: 10%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.btn-editar:hover,
+.btn-excluir:hover {
+  transform: scale(1.1);
+}
+

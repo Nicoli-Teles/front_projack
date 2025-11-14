@@ -1,0 +1,142 @@
+
+/* Logo no topo da barra lateral */
+
+.logo {
+    width: 300px;      /* ajuste o tamanho desejado */
+    height: auto;
+  
+  }
+  
+  /* janela clipe */
+  .janela_clipe {
+    width: 270px;
+    height: auto;
+    margin-top: -80px; /* Ajuste o valor para subir mais ou menos */
+  }
+  
+  .icon {
+    width: 50px;                 /* Tamanho do ícone */
+    height: auto;
+    object-fit: contain;         /* Mantém a proporção */
+  
+  }
+  
+  .sino {
+    width: 150px;                 /* Tamanho do ícone */
+    height: auto;
+    object-fit: contain;         /* Mantém a proporção */
+  }
+  
+  #notificacao-btn {
+        position:fixed;
+        cursor: pointer;
+        width: 300px; /* tamanho da imagem */
+        right: 0;
+        top: -20px
+      }
+  
+  /* Container de notificação */
+      #notificacao-container {
+        display: none; /* escondido por padrão */
+        width: 300px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 80px; /* ajusta a posição conforme necessário */
+        right: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        z-index: 999; /* Alto, fica na frente */
+      }
+  
+  .perfil {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 40px; /* negativo sobe e positivo desce */
+    left: 500px;
+  }
+  
+  .info_basicas {
+    width: 600px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 110px; /* negativo sobe e positivo desce */
+    right:130px;
+  }
+  
+  .contatos {
+  
+    width: 600px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 220px; /* negativo sobe e positivo desce */
+    left: 500px;
+  
+  }
+  
+  .habilidades {
+  
+    width: 700px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 540px; /* negativo sobe e positivo desce */
+    left: 525px;
+  
+  }
+
+
+  .foto-circular {
+  width: 150px;
+  height: autopx;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 200px; /* ajuste conforme o layout */
+  left: 1240px; /* ajuste conforme o layout */
+  border: 3px solid #2b2401;
+  margin-right: 10px;
+}
+
+.foto-quadrada {
+  width: 200px;
+  height: 170px;
+  object-fit: cover;
+  position: absolute;
+  top: 190px; /* posição acima da janela_clipe */
+  left: 95px; /* ajuste conforme o layout */
+  border-radius: 5px;
+  border: 2px solid #413003;
+  z-index: 999;
+}
+
+.opcoes-foto {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.icone-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.2s;
+  z-index: 999;
+}
+
+.icone-foto:hover {
+  transform: scale(1.1);
+}
+
+.icone-foto.selecionado {
+  border-color: #351d06;
+}
+

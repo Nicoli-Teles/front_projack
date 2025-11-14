@@ -1,0 +1,84 @@
+.tecnologia {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 28vh;
+  border: 2px solid #000000;      /* linha de contorno verde escura */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+
+
+}
+
+/* Cabeçalho da seção */
+.tecnologia-header {
+  display: flex;
+  justify-content: space-between; /* título à esquerda, botões à direita */
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.tecnologia-header h3 {
+  font-size: 2rem;   /* 🔹 controla o tamanho da fonte */
+  font-weight: bold;   /* deixa o título mais marcante */
+  margin: 0;           /* remove espaçamento padrão */
+  color: #333333;      /* define uma cor personalizada */
+  margin-left: 1rem; /* 🔹 desloca o título ligeiramente para a direita */
+
+}
+
+
+/* Botões (imagens) */
+.botoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-img {
+  width: 2.8rem;
+  height: 2.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+}
+
+.btn-img:hover {
+  transform: scale(1.1);
+}
+
+/* Lista de tecnologias */
+.tecnologia-lista {
+  margin-top: -0.86rem;
+  display: flex;                 /* organiza os itens em linha */
+  flex-wrap: wrap;               /* permite quebrar linha quando faltar espaço */
+  gap: 1rem;                     /* espaçamento entre os itens */
+  padding: 0rem 5rem 1rem 1.5rem; /* topo, direita, baixo, esquerda */
+  box-sizing: border-box;        /* padding e borda não quebram o layout */
+    
+  height: 15rem;                 /* altura fixa da lista */
+  overflow-y: auto;              /* adiciona barra de rolagem vertical quando conteúdo ultrapassa */
+  
+}
+
+
+
+/* Cada tecnologia */
+.tecnologia-item {
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #000000;      /* linha de contorno verde escura */
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+  height: 1.5rem;                 /* altura fixa do item */
+  background-color: #FBF8E0;
+
+
+}

@@ -1,0 +1,78 @@
+/* =======================
+   RESET GLOBAL
+   ======================= */
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* =======================
+       BODY E ESTRUTURA GERAL
+       ======================= */
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Quantico', sans-serif;
+      background-color: #003221;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    /* =======================
+       TELA PRINCIPAL
+       ======================= */
+    .tela {
+      width: 90vw;
+      height: 90vh;
+      background-color: #003221;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    /* =======================
+       CONTEÚDO CENTRAL
+       ======================= */
+    .conteudo {
+      width: 90%;
+      height: 90%;
+      background-color: #64997F;
+      border-radius: 1.5rem;
+      display: flex;
+      box-shadow: 0 0 5vh 5vh rgba(0, 0, 0, 0.25);
+    }
+    
+    /* =======================
+       RESPONSIVIDADE
+       ======================= */
+    @media (max-width: 1024px) {
+      .conteudo {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      body, html {
+        align-items: flex-start;
+      }
+    
+      .tela {
+        width: 100vw;
+        height: auto;
+        border-radius: 0;
+      }
+    
+      .conteudo {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border-radius: 0;
+      }
+    }
+    

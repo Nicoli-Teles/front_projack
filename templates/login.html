@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Projack Impulse</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css_login/geral.css') }}">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Poetsen+One&family=Quantico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="flashMessage" class="flash-message"></div>
+  <div class="container">
+    <h2 class="slogan">Junte a tripulação certa e voe alto com seus projetos!</h2>
+
+    <div class="card">
+      <!-- Avatar -->
+      <div class="avatar"></div>
+      <h1 class="title">LOGIN</h1>
+
+      <!-- 🔹 Formulário alterado -->
+      <form id="loginForm">
+        <input type="email" placeholder="Insira seu email" class="input" name="email" required>
+        <input type="password" placeholder="Insira sua senha" class="input" name="senha" required> 
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <!-- Link para cadastro -->
+      <a href="{{ url_for('cadastro') }}" class="register">Cadastrar-se</a>
+
+      <!-- Elementos decorativos -->
+      <div class="decor">
+        <img src="{{ url_for('static', filename='imagens/imagens_login/foguete.png') }}" alt="Foguete" class="foguete">
+        <img src="{{ url_for('static', filename='imagens/imagens_login/esquilo astronauta.png') }}" alt="Esquilo astronauta" class="esquilo">
+        <img src="{{ url_for('static', filename='imagens/imagens_login/Project.png') }}" alt="Projack Impulse" class="logo">
+      </div>
+    </div>
+  </div>
+
+  <script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = e.target.email.value;
+  const senha = e.target.senha.value;
+
+  try {
+    const resposta = await fetch("http://127.0.0.1:8000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, senha })
+    });
+
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+      alert(dados.detail || "Erro no login");
+      return;
+    }
+
+    // 🔹 Armazena o ID do usuário no localStorage
+    localStorage.setItem("idUsuario", dados.id);
+
+    alert(dados.mensagem || "Login realizado com sucesso!");
+
+    // 🔹 Redireciona para /perfil com o ID como parâmetro (rota do Flask)
+    window.location.href = `/perfil/${dados.id}`;
+
+
+  } catch (error) {
+    alert("Erro ao conectar com o servidor.");
+    console.error(error);
+  }
+});
+</script>
+
+</body>
+</html>

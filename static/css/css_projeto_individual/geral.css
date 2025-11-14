@@ -1,0 +1,237 @@
+/* ===============================
+   CONFIGURAÇÃO GERAL
+   =============================== */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quantico', sans-serif;
+  font-size: 1rem;
+  background-color: #FBF8E0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   CABEÇALHO FIXO
+   =============================== */
+
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4vw;
+  background: rgba(0, 50, 33, 0.84);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  z-index: 100;
+}
+
+/* Botão Voltar (à direita) */
+.btn-voltar {
+  background: none; /* Remove fundo do botão */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Indica que é clicável */
+  display: flex; /* Garante que a imagem se alinhe corretamente */
+  justify-content: flex-end; /* Alinha o botão à direita */
+  margin-left: auto; /* Faz o botão "empurrar" para o lado direito */
+  margin-right: 6rem;}
+
+/* Imagem do botão */
+.btn-voltar img {
+  background-color: transparent; /* Torna a imagem transparente */
+  width: 10rem; /* Ajuste o tamanho da imagem */
+  height: 3rem; /* Ajuste o tamanho da imagem */
+}
+
+/* Efeito ao passar o mouse (hover) */
+.btn-voltar:hover img {
+  transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% */
+}
+
+
+/* Ajustes para telas menores */
+@media (max-width: 992px) {
+  .cabecalho {
+    height: 7vh;
+    padding: 0 4vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecalho {
+    height: 10vh;
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   CONTAINER PRINCIPAL (.tela)
+   =============================== */
+
+.tela {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 9vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2vh;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   BLOCOS PRINCIPAIS
+   =============================== */
+
+.bloco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* ===============================
+   BLOCO 1 (dividido em dois)
+   =============================== */
+.bloco1 {
+  width: 95%;
+  height: 70vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between; /* espaço entre subblocos */
+  align-items: stretch;           /* estica subblocos verticalmente */
+  gap: 5%;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+/* Subbloco direito com dois blocos empilhados */
+.subbloco_direito {
+  max-width: 47.5%; 
+  width: 48.5%;   
+  
+  height: 70vh;
+  padding: 1%;
+  gap: 4%;
+  display: flex;
+  flex-direction: column;          /* empilha os filhos verticalmente */
+  justify-content: flex-start;      /* alinha os blocos ao topo, sem espaço extra */
+  align-items: stretch;            /* filhos ocupam largura total do container */
+  font-weight: bold;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  padding: 2.5rem 0rem 0rem 0rem; /* 🔹 topo, direita, baixo, esquerda */
+
+}
+
+
+
+/* ===============================
+   BLOCOS 2 e 3
+   =============================== */
+
+   .bloco2 {
+    width: 95%;
+    height: 60vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between; /* espaço entre subblocos */
+    align-items: stretch;           /* estica subblocos verticalmente */
+    gap: 5%;
+    padding: 1%;
+    box-sizing: border-box;
+  }
+  
+
+.bloco3 {
+  width: 100%;
+  height: 10vh;
+  gap: 2%;
+}
+
+/* ===============================
+   RESPONSIVIDADE
+   =============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .tela {
+    padding-top: 10vh;
+    gap: 3vh;
+  }
+
+  .bloco1 {
+    height: 45vh;
+  }
+
+  .bloco2 {
+    height: 18vh;
+  }
+
+  .bloco3 {
+    height: 10vh;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .tela {
+    padding-top: 12vh;
+    gap: 3vh;
+  }
+
+  .bloco1, .bloco2, .bloco3 {
+    width: 90%;
+    border-radius: 8px;
+  }
+
+  /* Subblocos empilham no celular */
+  .bloco1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .subbloco {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .bloco2 {
+    height: 18vh;
+  }
+
+  .bloco3 {
+    height: 12vh;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .bloco1, .bloco2, .bloco3 {
+    width: 95%;
+  }
+
+  .subbloco {
+    height: 18vh;
+  }
+
+  .bloco1 {
+    height: auto;
+  }
+}

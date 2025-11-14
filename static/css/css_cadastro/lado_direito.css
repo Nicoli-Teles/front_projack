@@ -1,0 +1,188 @@
+/* =======================
+   PAINEL DIREITO (Formulário)
+   ======================= */
+   .painel-direito {
+    width: 65%;
+    background-color: #fff;
+    border-radius: 0 2rem 2rem 0;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch; /* 🔥 permite que os filhos ocupem toda a largura */
+    
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* =======================
+     IMAGEM SOBREPOSTA
+     ======================= */
+  .imagem-sobreposta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(6rem, 10vw, 12rem);
+    height: auto;
+    transform: translate(25%, -25%);
+    z-index: 200;
+  }
+  
+  /* =======================
+     TÍTULO
+     ======================= */
+  .painel-direito h1 {
+    font-family: 'Poetsen One', cursive;
+    font-size: clamp(2rem, 4vw, 4rem);
+    color: #23433E;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* =======================
+     FORMULÁRIO
+     ======================= */
+  .form-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    width: 100%;          /* ocupa toda a largura do painel */
+    max-width: 70rem;     /* limite opcional */
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+  }
+  
+  /* =======================
+     CAMPOS DE INPUT
+     ======================= */
+  .campo {
+    width: 100%;
+    height: clamp(3rem, 5vw, 4rem);
+    background: #B7D2BD;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+    padding-left: 4.5rem;
+    position: relative;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+  
+  /* Ícones dentro do campo */
+  .campo .icone {
+    position: absolute;
+    left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  /* Input em si */
+  .campo input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #003223;
+    outline: none;
+    font-family: 'Quantico', sans-serif;
+  }
+  
+  .campo input::placeholder {
+    color: #003223;
+    opacity: 0.8;
+  }
+  
+  /* Ícone do toggle de senha */
+  .campo .toggle-senha {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  /* =======================
+     RADIO BUTTONS
+     ======================= */
+  .grupo-radio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 5vw, 10rem);
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: #000;
+    margin-top: 1rem;
+  }
+  
+  .grupo-radio input {
+    margin-right: 0.5rem;
+    accent-color: #003221;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* =======================
+     BOTÃO
+     ======================= */
+  button[type="submit"] {
+    width: clamp(50%, 20vw, 20rem);
+    padding: 0.7rem 0;
+    margin-top: 2rem;
+    background: #003221;
+    border: none;
+    color: #fff;
+    border-radius: 2rem;
+    font-family: 'Quantico', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.75rem);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background: #004d30;
+  }
+  
+  /* =======================
+     RESPONSIVIDADE
+     ======================= */
+  @media (max-width: 1024px) {
+    .painel-direito {
+      width: 100%;
+      border-radius: 0 0 2rem 2rem;
+      padding: 1.5rem;
+    }
+  
+    .imagem-sobreposta {
+      width: 7rem;
+      transform: translate(20%, -20%);
+    }
+  
+    .grupo-radio {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .form-campos {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .campo {
+      padding-left: 3rem;
+    }
+  
+    button[type="submit"] {
+      width: 80%;
+    }
+  
+    .imagem-sobreposta {
+      display: none;
+    }
+  }
+  
