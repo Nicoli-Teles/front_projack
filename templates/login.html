@@ -47,7 +47,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   const senha = e.target.senha.value;
 
   try {
-    const resposta = await fetch("http://127.0.0.1:8000/login", {
+    const resposta = await fetch("https://microidealizador.azurewebsites.net/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, senha })
