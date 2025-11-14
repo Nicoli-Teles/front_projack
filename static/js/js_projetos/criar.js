@@ -1,7 +1,7 @@
 // ================================
 // Configuração da API
 // ================================
-const API_BASE = "http://127.0.0.1:8000"; // Base da sua API
+const API_BASE = "https://fabricioapis.azurewebsites.net"; // Base da sua API
 
 // ================================
 // SELEÇÃO DE ELEMENTOS
