@@ -196,7 +196,7 @@
 
     if (confirm("Tem certeza que deseja excluir sua conta? Essa ação não pode ser desfeita.")) {
       try {
-        const resposta = await fetch(https://microidealizador.azurewebsites.net/perfil/${id}, { method: "DELETE" });
+        const resposta = await fetch(`https://microidealizador.azurewebsites.net/perfil/${id}`, { method: "DELETE" });
         const data = await resposta.json();
 
         if (!resposta.ok) throw new Error(data.detail || "Erro ao excluir conta.");
