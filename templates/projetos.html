@@ -18,23 +18,49 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projetos/cards_projetos.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css_projetos/criar_projetos.css') }}">
 </head>
+
 <body>
+  <!-- ================================
+       PAINEL LATERAL (RETÂNGULO)
+     ================================ -->
+  <div id="retangulo" class="retangulo">
+
+    <!-- Logo principal -->
+    <img src="{{ url_for('static', filename='imagens/imagens_projetos/Project.png') }}" 
+         alt="Logo Projack Impulse" class="logo" />
+
+    <!-- Bloco com clipe -->
+    <img src="{{ url_for('static', filename='imagens/imagens_projetos/Bloco_com_clipe.png') }}" 
+         alt="Bloco com Clipe" class="Bloco_com_clipe" />
+
+    <!-- Texto "Idealizador" -->
+    <div class="idealizador-texto">Idealizador</div>
+
+    <!-- Itens do menu -->
+    <a href="{{ url_for('perfil', id_usuario=id_usuario) }}" class="info-item link-perfil">
+      <img src="{{ url_for('static', filename='imagens/imagens_projetos/icon_perfil.png') }}" 
+           alt="Perfil" class="icon">
+      <span>Meu Perfil</span>
+    </a>
+    
+    <div class="info-item">
+      <img src="{{ url_for('static', filename='imagens/imagens_projetos/icon_projetos.png') }}" 
+           alt="Projetos" class="icon">
+      <span>Meus Projetos</span>
+    </div>
+
+  </div>
 
   <!-- ================================
-       CABEÇALHO
+       CABEÇALHO SUPERIOR
      ================================ -->
   <header class="cabecalho">
     <button id="btnToggle" class="botao_opcoes">Menu</button>
-
-    <!--<button class="botao_notificacao">
-      <img src="{{ url_for('static', filename='imagens/imagens_projetos/notificacoes.png') }}" alt="Notificações" class="icone_notificacao">
-      <span id="contadorNotificacoes" class="contador_notificacoes">0</span>
-    </button>-->
   </header>
 
   <!-- ================================
-         CONTAINER PRINCIPAL
-       ================================ -->
+       CONTEÚDO PRINCIPAL
+     ================================ -->
   <div class="tela">
 
     <!-- Título -->
@@ -43,13 +69,15 @@
         <h1>Meus Projetos</h1>
       </div>
       <div class="logo-container">
-        <img src="{{ url_for('static', filename='imagens/imagens_projetos/Project.png') }}" alt="Logo do Projeto" class="logo-projeto"/>
+        <img src="{{ url_for('static', filename='imagens/imagens_projetos/Project.png') }}" 
+             alt="Logo do Projeto" class="logo-projeto" />
       </div>
     </div>
 
     <!-- Pesquisa + Botão criar -->
     <div class="container-pesquisa">
-      <img src="{{ url_for('static', filename='imagens/imagens_projetos/foguete.png') }}" alt="Ícone Foguete" class="icone-foguete" />
+      <img src="{{ url_for('static', filename='imagens/imagens_projetos/foguete.png') }}" 
+           alt="Ícone Foguete" class="icone-foguete" />
       <div class="barra-pesquisa">
         <input type="text" placeholder="Buscar projeto..." />
         <button class="botao-busca">
@@ -61,17 +89,13 @@
       </button>
     </div>
 
-    <!-- Container de projetos (será preenchido via JS) -->
+    <!-- Container de projetos -->
     <div class="projetos-container"></div>
-
   </div>
 
-  <!-- ================================
-         BLOCO DE CRIAÇÃO DE PROJETO
-       ================================ -->
+  <!-- BLOCO DE CRIAÇÃO DE PROJETO -->
   <div id="bloco-criacao" class="bloco-criacao" style="display: none;">
     <div class="conteudo-bloco">
-
       <h2 class="titulo-bloco">Crie Seu Projeto</h2>
 
       <div class="divisoes-container">
@@ -80,7 +104,6 @@
             <div class="campo_criacao_inline">
               <input type="text" placeholder="Nome do Projeto" class="retangulo_criacao_inline" required>
             </div>
-
             <div class="campo_criacao_inline">
               <select id="nivelProjeto" class="retangulo_criacao_inline" required>
                 <option value="" disabled selected>Dificuldade do projeto</option>
@@ -89,11 +112,9 @@
                 <option value="Avançado">Avançado</option>
               </select>
             </div>
-
             <div class="campo_criacao_inline">
               <input type="text" placeholder="Categoria do Projeto" class="retangulo_criacao_inline" required>
             </div>
-
             <div class="campo_criacao_inline">
               <textarea placeholder="Descrição do Projeto" class="retangulo_triplo_criacao" required></textarea>
             </div>
@@ -101,7 +122,6 @@
         </div>
 
         <div class="divisao">
-
           <div class="bloco_direita" id="bloco-tecnologias">
             <div class="cabecalho_bloco">
               <h3>Tecnologias:</h3>
@@ -129,7 +149,6 @@
               <input type="text" placeholder="Repositório: 2" class="input_bloco">
             </div>
           </div>
-
         </div>
       </div>
 
@@ -137,7 +156,6 @@
         <button id="cancelarBloco" class="btn-imagem">
           <img src="{{ url_for('static', filename='imagens/imagens_projetos/cancelar.png') }}" alt="Cancelar" />
         </button>
-
         <button id="salvarBloco" class="btn-imagem">
           <img src="{{ url_for('static', filename='imagens/imagens_projetos/salvar.png') }}" alt="Salvar" />
         </button>
@@ -154,20 +172,15 @@
     </div>
   </div>
 
-  <!-- ================================
-         SCRIPTS JS
-       ================================ -->
+  <!-- Scripts -->
   <script>
-  window.idIdealizadorGlobal = Number("{{ id_usuario }}");
+    window.idIdealizadorGlobal = Number("{{ id_usuario }}");
   </script>
 
-  <!-- Scripts com rotas Flask -->
-  <script src="{{ url_for('static', filename='js/js_projetos/retangulo.js') }}"></script>
   <script src="{{ url_for('static', filename='js/js_projetos/rendenizar.js') }}"></script>
   <script src="{{ url_for('static', filename='js/js_projetos/criar.js') }}"></script>
   <script src="{{ url_for('static', filename='js/js_projetos/notificacao.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/js_projetos/retangulo.js') }}"></script>
 
 </body>
 </html>
-
-
