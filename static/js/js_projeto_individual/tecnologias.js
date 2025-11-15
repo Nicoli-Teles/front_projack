@@ -1,5 +1,5 @@
 /* ============================================================
-   🔹 SEÇÃO: TECNOLOGIAS (DINÂMICO VIA API) COM TOGGLE DE EXCLUSÃO INLINE
+   🔹 SEÇÃO: TECNOLOGIAS (DINÂMICO VIA API) COM TOGGLE DE EXCLUSÃO INLINEe
    ============================================================ */
 (() => {
   const listaTecnologias = document.getElementById('listaTecnologias'); // deve existir no HTML
