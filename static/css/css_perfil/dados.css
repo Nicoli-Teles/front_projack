@@ -184,7 +184,6 @@
 }
 
 /* 🔹 Estilo dos botões */
-.botao-voltar,
 .botao-logout,
 .botao-excluir {
   padding: 10px 16px;
@@ -195,13 +194,9 @@
   transition: 0.3s;
 }
 
-.botao-voltar {
-  background-color: #60d390;
-  color: #000;
-}
 
 .botao-logout {
-  background-color: #007bff;
+  background-color: #60d390;
   color: white;
 }
 
@@ -210,7 +205,6 @@
   color: white;
 }
 
-.botao-voltar:hover,
 .botao-logout:hover,
 .botao-excluir:hover {
   transform: scale(1.05);
@@ -322,4 +316,5 @@
   .modal-buttons button:hover {
     background-color: #008e3a;
   }
+
   
