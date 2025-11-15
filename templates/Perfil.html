@@ -19,25 +19,10 @@
 <body>
   <div class="cabecalho">
     <div class="botoes-acao">
-      <button id="btn-voltar" class="botao-voltar">⬅ Voltar</button>
       <button id="btn-excluir" class="botao-excluir">🗑 Excluir conta</button>
       <button id="btn-logout" class="botao-logout">🚪 Logout</button>
     </div>
   </div>
-
-  <!-- Container da notificação -->
-  <div id="notificacao-container">
-    <p>Você tem novas notificações!</p>
-  </div>
-
-  <script>
-    const btn = document.getElementById('notificacao-btn');
-    const container = document.getElementById('notificacao-container');
-
-    btn?.addEventListener('click', () => {
-      container.style.display = (container.style.display === 'block') ? 'none' : 'block';
-    });
-  </script>
 
   <!-- retângulo verde lado esquerdo -->
   <div class="conteudo_esquerda">
@@ -183,13 +168,6 @@
 
   <!-- 🔹 BOTÕES DE VOLTAR / EXCLUIR / LOGOUT -->
   <script>
-  document.getElementById("btn-voltar").addEventListener("click", () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = "/login";
-    }
-  });
 
   document.getElementById("btn-excluir").addEventListener("click", async () => {
     const id = window.location.pathname.split("/").pop();
