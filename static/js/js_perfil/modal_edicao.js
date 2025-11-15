@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     try {
-      const resp = await fetch(`https://microidealizador.azurewebsites.net/habilidades/${id}`, {
+      const resp = await fetch(`https://microidealizador.azurewebsites.net/perfil/${id}`, {
         method: "PUT",
         body: formData, // 🔹 sem Content-Type manual
       });
@@ -119,5 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target === modal) modal.style.display = "none";
   });
 });
+
 
 
