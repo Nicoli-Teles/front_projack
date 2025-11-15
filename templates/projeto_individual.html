@@ -29,7 +29,11 @@
   <button class="btn-voltar" onclick="voltarPagina()">
     <img src="{{ url_for('static', filename='imagens/imagens_projeto_individual/voltar.png') }}" alt="Botão voltar" />
   </button>
+
+  <!-- Nome do projeto -->
+  <h1 id="nomeProjetoHeader" class="titulo-projeto-header"></h1>
 </header>
+
 
   <div class="tela">
 
@@ -122,6 +126,10 @@
       <div class="modal-colunas">
         <!-- Coluna esquerda -->
         <div class="modal-coluna">
+
+          <label for="editNome">Nome do Projeto:</label>
+          <input type="text" id="editNome">
+
           <label for="editDescricao">Descrição:</label>
           <textarea id="editDescricao"></textarea>
 
@@ -129,19 +137,19 @@
           <select id="editNivel" required>
             <option value="Básico">Básico</option>
             <option value="Intermediário">Intermediário</option>
-            <option value="Difícil">Difícil</option>
+            <option value="Difícil">Avançado</option>
           </select>
 
           <label for="editCategoria">Categoria:</label>
           <input type="text" id="editCategoria">
 
-          <!-- Adicionando campo de Status -->
           <label for="editStatus">Status:</label>
           <select id="editStatus" required>
             <option value="Em andamento">Em andamento</option>
             <option value="Concluído">Concluído</option>
           </select>
         </div>
+
 
         <!-- Coluna direita -->
         <div class="modal-coluna">
