@@ -27,33 +27,54 @@ html, body {
   background: rgba(0, 50, 33, 0.84);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* centraliza o título */
   padding: 0 2vw;
   z-index: 100;
 }
 
+/* Nome do projeto no topo */
+.titulo-projeto-header {
+  font-family: 'Quantico', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #FFFFFF;
+
+  /* Centralização + truncamento */
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: 60%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
 /* Botão Voltar (à direita) */
 .btn-voltar {
-  background: none; /* Remove fundo do botão */
-  border: none; /* Remove borda */
-  cursor: pointer; /* Indica que é clicável */
-  display: flex; /* Garante que a imagem se alinhe corretamente */
-  justify-content: flex-end; /* Alinha o botão à direita */
-  margin-left: auto; /* Faz o botão "empurrar" para o lado direito */
-  margin-right: 6rem;}
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 6rem;
+
+  position: absolute;
+  right: 2vw;
+}
 
 /* Imagem do botão */
 .btn-voltar img {
-  background-color: transparent; /* Torna a imagem transparente */
-  width: 10rem; /* Ajuste o tamanho da imagem */
-  height: 3rem; /* Ajuste o tamanho da imagem */
+  background-color: transparent;
+  width: 10rem;
+  height: 3rem;
 }
 
 /* Efeito ao passar o mouse (hover) */
 .btn-voltar:hover img {
-  transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% */
+  transform: scale(1.1);
 }
-
 
 /* Ajustes para telas menores */
 @media (max-width: 992px) {
@@ -104,17 +125,17 @@ html, body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
 /* ===============================
    BLOCO 1 (dividido em dois)
    =============================== */
+
 .bloco1 {
   width: 95%;
   height: 70vh;
   background-color: transparent;
   display: flex;
-  justify-content: space-between; /* espaço entre subblocos */
-  align-items: stretch;           /* estica subblocos verticalmente */
+  justify-content: space-between;
+  align-items: stretch;
   gap: 5%;
   padding: 1%;
   box-sizing: border-box;
@@ -122,42 +143,37 @@ html, body {
 
 /* Subbloco direito com dois blocos empilhados */
 .subbloco_direito {
-  max-width: 47.5%; 
-  width: 48.5%;   
-  
+  max-width: 47.5%;
+  width: 48.5%;
   height: 70vh;
   padding: 1%;
   gap: 4%;
   display: flex;
-  flex-direction: column;          /* empilha os filhos verticalmente */
-  justify-content: flex-start;      /* alinha os blocos ao topo, sem espaço extra */
-  align-items: stretch;            /* filhos ocupam largura total do container */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   font-weight: bold;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: transparent;
-  padding: 2.5rem 0rem 0rem 0rem; /* 🔹 topo, direita, baixo, esquerda */
-
+  padding: 2.5rem 0rem 0rem 0rem;
 }
-
-
 
 /* ===============================
    BLOCOS 2 e 3
    =============================== */
 
-   .bloco2 {
-    width: 95%;
-    height: 60vh;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between; /* espaço entre subblocos */
-    align-items: stretch;           /* estica subblocos verticalmente */
-    gap: 5%;
-    padding: 1%;
-    box-sizing: border-box;
-  }
-  
+.bloco2 {
+  width: 95%;
+  height: 60vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5%;
+  padding: 1%;
+  box-sizing: border-box;
+}
 
 .bloco3 {
   width: 100%;
