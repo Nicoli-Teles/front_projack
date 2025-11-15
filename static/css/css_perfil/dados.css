@@ -177,7 +177,7 @@
 .botoes-acao {
   position: absolute;
   top: 20px;
-  right: 55px;
+  right: 90px;
   display: flex;
   gap: 10px; /* espaço entre os botões */
   z-index: 800;
@@ -318,4 +318,5 @@
   }
 
   
+
 
