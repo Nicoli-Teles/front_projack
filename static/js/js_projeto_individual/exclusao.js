@@ -1,5 +1,5 @@
 /* ============================================================
-   🔹 MODO DE EXCLUSÃO - TECNOLOGIAS E REPOSITÓRIOS
+   🔹 MODO DE EXCLUSÃO - TECNOLOGIAS E REPOSITÓRIOSss
    ============================================================ */
 
    (() => {
